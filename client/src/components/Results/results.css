@@ -11,3 +11,22 @@
     border: 2px solid black;
     border-radius: 0;
 }
+
+#resultTitleAuthorButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resultButtons {
+    margin-left: 10px;
+    box-shadow: 5px 5px;
+}
+
+#resultsImgDescription {
+    display: flex;
+    margin-left: 20px;
+}
+
+#resultsDescription {
+    margin-left: 40px;
+}
