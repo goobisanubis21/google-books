@@ -1,0 +1,13 @@
+#savedCard {
+    margin: 30px;
+    padding-bottom: 30px;
+    border: 3px solid black;
+    border-radius: 0;
+}
+
+#saved {
+    margin: 30px;
+    padding-bottom: 50px;
+    border: 2px solid black;
+    border-radius: 0;
+}

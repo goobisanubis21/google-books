@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import SavedCard from "../components/SavedCard/SavedCard";
 
 function Saved() {
     return (
         <div>
-            saved books
+            <SavedCard />
         </div>
     )
 }
