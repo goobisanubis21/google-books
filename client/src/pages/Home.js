@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Search from "../components/Search/Search"
 
 function Home() {
     return (
         <div>
-            <h1>hi</h1>
+            <Search />
         </div>
     )
 }

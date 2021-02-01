@@ -1,0 +1,19 @@
+#searchCard {
+    margin: 30px;
+    padding-bottom: 50px;
+    border: 3px solid black;
+    border-radius: 0;
+}
+
+#inputEl {
+    width: 100%;
+}
+
+#btnDiv {
+    text-align: right;
+    margin-top: 10px;
+}
+
+#btn {
+    box-shadow: 5px 5px;
+}
