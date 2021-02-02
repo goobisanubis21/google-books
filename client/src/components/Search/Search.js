@@ -9,9 +9,9 @@ function Search(props) {
                 <h5>Book Search</h5>
                 <p>Book</p>
                 <form>
-                    <input id="inputEl" placeholder="Book Title" type="text" name="searched" value={props.search} onChange={props.handleInputChange}></input>
+                    <input id="inputEl" placeholder="Book Title" type="text" name="search" value={props.search} onChange={props.handleInputChange}></input>
                     <div id="btnDiv">
-                        <button id="btn" type="submit" onClick={props.handleFormChange}>Search</button>
+                        <button id="btn" type="submit" onClick={props.handleFormSubmit}>Search</button>
                     </div>
                 </form>
             </div>

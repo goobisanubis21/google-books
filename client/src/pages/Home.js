@@ -10,20 +10,23 @@ class Home extends Component {
         results: []
     }
 
-    componentDidMount() {
-        API.searchBooks()
-            .then(res => this.setState({results: res.data}))
-            .catch(err => console.log(err))
-    }
+    // componentDidMount() {
+    //     API.searchBooks(this.state.search)
+    //         .then(res => this.setState({results: res.data}))
+    //         .catch(err => console.log(err))
+    // }
 
     handleInputChange = event => {
         this.setState({search: event.target.value})
+        console.log(this.state.search)
     }
 
     handleFormSubmit = event => {
+        event.preventDefault()
+        console.log("hey")
         API.searchBooks(this.state.search)
             .then(res => {
-                this.setState({results: res.data})
+                this.setState({results: res.results})
             }).catch(err => {
                 console.log(err)
             })

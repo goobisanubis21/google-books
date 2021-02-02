@@ -1,10 +1,10 @@
 const express = require("express");
 const path = require("path");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes/api/index");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -15,13 +15,14 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/books",
-  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
-);
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost/books",
+//   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
+// );
 
 // Use apiRoutes
 app.use("/api", apiRoutes);
+
 
 // Send every request to the React app
 // Define any API routes before this runs
