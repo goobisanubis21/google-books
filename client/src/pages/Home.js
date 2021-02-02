@@ -25,7 +25,8 @@ class Home extends Component {
         event.preventDefault()
         API.searchBooks(this.state.search)
             .then(res => {
-                this.setState({results: res.results})
+                console.log(res.data)
+                this.setState({results: res.data})
             }).catch(err => {
                 console.log(err)
             })

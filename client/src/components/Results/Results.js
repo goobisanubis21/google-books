@@ -5,13 +5,13 @@ function Results(props) {
     return (
         <div id="resultsCard" className="card">
             {props.results.map(result => (
-                <div key={result.items.id} className="card-body">
+                <div key={result.id} className="card-body">
                     <h5>Results</h5>
                     <div id="result" className="card">
                         <div id="resultTitleAuthorButtons" className="card-body">
                             <div>
-                                <p>{result.items.volumeInfo.title}</p>
-                                <p>{result.items.volumeInfo.authors}</p>
+                                <p>{result.volumeInfo.title}</p>
+                                <p>{result.volumeInfo.authors}</p>
                             </div>
                             <div id="btnDivResults">
                                 <button id="resultView" className="resultButtons">View</button>
@@ -19,8 +19,8 @@ function Results(props) {
                             </div>
                         </div>
                         <div id="resultsImgDescription">
-                            <p><img alt="BookImage" src={result.items.volumeInfo.thumbnail}></img></p>
-                            <p id="resultsDescription">{result.items.volumeInfo.description}</p>
+                            <p><img alt="BookImage" src={result.volumeInfo.thumbnail}></img></p>
+                            <p id="resultsDescription">{result.volumeInfo.description}</p>
                         </div>
                     </div>
                 </div>
