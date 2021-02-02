@@ -23,7 +23,6 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault()
-        console.log("hey")
         API.searchBooks(this.state.search)
             .then(res => {
                 this.setState({results: res.results})
