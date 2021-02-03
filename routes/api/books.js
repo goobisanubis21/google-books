@@ -11,6 +11,7 @@ const booksController = require("../../controller/booksController");
 router
   .route("/:search")
   .get(booksController.searchBooks)
+  // .get((req, res) => {console.log(req.params.search)})
   // .get(booksController.findById)
   // .delete(booksController.remove);
 
