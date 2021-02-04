@@ -12,7 +12,7 @@ function Results(props) {
                         <div id="resultTitleAuthorButtons" className="card-body">
                             <div>
                                 <p>{result.volumeInfo.title}</p>
-                                <p>{result.volumeInfo.authors[0]}</p>
+                                <p>{result.volumeInfo.authors}</p>
                             </div>
                             <div id="btnDivResults">
                                 <button id="resultSave" value={result.id} className="resultButtons" onClick={props.savedBook}>Save</button>
