@@ -15,7 +15,6 @@ function Results(props) {
                                 <p>{result.volumeInfo.authors[0]}</p>
                             </div>
                             <div id="btnDivResults">
-                                <button id="resultView" className="resultButtons">View</button>
                                 <button id="resultSave" value={result.id} className="resultButtons" onClick={props.savedBook}>Save</button>
                             </div>
                         </div>

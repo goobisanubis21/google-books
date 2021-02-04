@@ -30,3 +30,8 @@
 #savedDescription {
     margin-left: 40px;
 }
+
+.active {
+    width: 500px;
+    z-index: 1;
+}

@@ -23,11 +23,18 @@ function Saved() {
         .catch(err => console.log(err))
     }
 
+    function zoom() {
+        let image = document.getElementById("savedImage");
+            image.classList.toggle("active")
+
+    }
+
     return (
         <div>
             <SavedCard
                 books ={books}
                 deleteBook={deleteBook}
+                zoom={zoom}
             />
         </div>
     )

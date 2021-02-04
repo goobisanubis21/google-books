@@ -14,12 +14,12 @@ function SavedCard(props) {
                                 <p>{book.author}</p>
                             </div>
                             <div id="btnDiv">
-                                <button id="view" className="savedButtons">View</button>
+                                <button id="view" className="savedButtons" onClick={() => props.zoom()}>View</button>
                                 <button id="delete" className="savedButtons" onClick={() => props.deleteBook(book._id)}>Delete</button>
                             </div>
                         </div>
                         <div id="savedImgDescription">
-                            <p><img src={book.image} alt="bookImage"></img></p>
+                            <p><img id="savedImage" src={book.image} alt="bookImage"></img></p>
                             <p id="savedDescription">
                                 {book.description}
                         </p>
