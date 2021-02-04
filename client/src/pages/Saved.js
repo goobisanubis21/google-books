@@ -26,7 +26,6 @@ function Saved() {
     function zoom() {
         let image = document.getElementById("savedImage");
             image.classList.toggle("active")
-
     }
 
     return (
