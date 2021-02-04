@@ -25,7 +25,9 @@ class Home extends Component {
             description: this.state.savedBooks.description,
             image: this.state.savedBooks.image
         })
-        // .then(this.setState({ savedBooks: {} }))
+        .then(setTimeout(() => {
+            this.setState({savedBooks: ({})})
+        },500))
 
     }
 
