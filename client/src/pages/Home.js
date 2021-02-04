@@ -7,26 +7,39 @@ import API from "../utils/API"
 class Home extends Component {
     state = {
         search: "",
-        results: []
+        results: [],
+        savedBooks: {}
     }
 
-    // componentDidMount() {
-    //     API.searchBooks(this.state.search)
-    //         .then(res => this.setState({results: res.data}))
-    //         .catch(err => console.log(err))
-    // }
+    savedBook = (e) => {
+        const clickedId = e.target.value;
+        for (let i = 0; i < this.state.results.length; i++) {
+            if (clickedId === this.state.results[i].id) {
+                this.setState({ savedBooks: { title: this.state.results[i].volumeInfo.title, author: this.state.results[i].volumeInfo.authors[0], description: this.state.results[i].volumeInfo.description, image: this.state.results[i].volumeInfo.imageLinks.thumbnail } })
+                console.log(this.state.savedBooks)
+            }
+        }
+        API.saveBook({
+            title: this.state.savedBooks.title,
+            author: this.state.savedBooks.author,
+            description: this.state.savedBooks.description,
+            image: this.state.savedBooks.image
+        })
+        // .then(this.setState({ savedBooks: {} }))
 
-    handleInputChange = event => {
-        this.setState({search: event.target.value})
+    }
+
+    handleInputChange = e => {
+        this.setState({ search: e.target.value })
         console.log(this.state.search)
     }
 
-    handleFormSubmit = event => {
-        event.preventDefault()
+    handleFormSubmit = e => {
+        e.preventDefault()
         API.searchBooks(this.state.search)
             .then(res => {
                 console.log(res.data)
-                this.setState({results: res.data})
+                this.setState({ results: res.data })
             }).catch(err => {
                 console.log(err)
             })
@@ -35,12 +48,15 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Search 
-                    handleInputChange = {this.handleInputChange}
-                    handleFormSubmit = {this.handleFormSubmit}
-                    search = {this.state.search}
+                <Search
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                    search={this.state.search}
                 />
-                <Results results={this.state.results}/>
+                <Results
+                    results={this.state.results}
+                    savedBook={this.savedBook}
+                />
             </div>
         )
     }
