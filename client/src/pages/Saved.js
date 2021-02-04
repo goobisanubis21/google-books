@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SavedCard from "../components/SavedCard/SavedCard";
+import API from '../utils/API';
 
 function Saved() {
+
+    useEffect(() => {
+        getBooks()
+    }, [])
+
+    const [books, setBooks] = useState([])
+
+    function getBooks() {
+        API.getBook().then(res => {
+            setBooks(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+
+    function deleteBook(id) {
+        API.deleteBook(id)
+        .then(res => getBooks())
+        .catch(err => console.log(err))
+    }
+
     return (
         <div>
-            <SavedCard />
+            <SavedCard
+                books ={books}
+                deleteBook={deleteBook}
+            />
         </div>
     )
 }
