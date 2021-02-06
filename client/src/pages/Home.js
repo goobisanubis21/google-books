@@ -20,14 +20,16 @@ class Home extends Component {
                 title: foundBook.volumeInfo.title,
                 author: foundBook.volumeInfo.authors[0],
                 description: foundBook.volumeInfo.description,
-                image: foundBook.volumeInfo.imageLinks.thumbnail
+                image: foundBook.volumeInfo.imageLinks.thumbnail,
+                readLink: foundBook.volumeInfo.previewLink
             }
         }, () => {
             API.saveBook({
                 title: this.state.savedBooks.title,
                 author: this.state.savedBooks.author,
                 description: this.state.savedBooks.description,
-                image: this.state.savedBooks.image
+                image: this.state.savedBooks.image,
+                readLink: this.state.savedBooks.readLink
             })
                 .then(() => {
                     this.setState({ savedBooks: {} })

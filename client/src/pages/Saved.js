@@ -23,9 +23,14 @@ function Saved() {
         .catch(err => console.log(err))
     }
 
-    function zoom() {
-        let image = document.getElementById("savedImage");
-            image.classList.toggle("active")
+    function zoom(e) {
+        e = window.event
+        const clickedBook = e.target
+        const viewedBook = books.find(bookss => bookss._id === clickedBook.id)
+        console.log(viewedBook)
+        window.location.replace(viewedBook.readLink)
+        console.log(clickedBook.id)
+        console.log(books)
     }
 
     return (
