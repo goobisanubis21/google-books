@@ -35,3 +35,9 @@
     width: 500px;
     z-index: 1;
 }
+
+@media screen and (max-width: 600px) {
+    #savedImgDescription {
+        display: block;
+    }
+}

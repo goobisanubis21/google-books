@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/pacific-island-39743",
+  process.env.MONGODB_URI || "mongodb://localhost/book",
   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
 

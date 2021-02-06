@@ -39,3 +39,9 @@
 hr {
     border: 2px solid black;
 }
+
+@media screen and (max-width: 600px) {
+    #resultsImgDescription {
+        display: block;
+    }
+}
